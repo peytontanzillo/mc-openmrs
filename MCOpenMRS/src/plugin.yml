@@ -1,0 +1,14 @@
+name: MCOpenMRS
+version: 1.0.0
+author: Ptown16
+main: me.peytontanzillo.mcopenmrs.MCOpenMRS
+commands:
+  mvn:
+    description: Allows you to run the OpenMRS Server
+    usage: /mvn openmrs-sdk:run
+  java:
+    description: Allows you to run the OpenMRS Server
+    usage: /java -jar  .\openmrs-standalone.jar
+  snap:
+    description: If player has the infinity gauntlet and all power stones, kick half the players off the server.
+    usage: /snap

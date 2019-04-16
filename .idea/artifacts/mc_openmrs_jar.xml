@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact name="mc-openmrs:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/mc_openmrs_jar</output-path>
+    <root id="root">
+      <element id="archive" name="mc-openmrs.jar">
+        <element id="module-output" name="mc-openmrs" />
+      </element>
+      <element id="library" level="project" name="spigot-1.13.2" />
+    </root>
+  </artifact>
+</component>
