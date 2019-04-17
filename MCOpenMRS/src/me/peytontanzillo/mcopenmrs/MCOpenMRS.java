@@ -1,9 +1,6 @@
 package me.peytontanzillo.mcopenmrs;
 
-import com.google.common.collect.Iterables;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -11,12 +8,12 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 public class MCOpenMRS extends JavaPlugin {
+
+	private int taskID = 0;
+
 	@Override
 	public void onEnable() {
 		System.out.println("OpenMRS has entered the chat.");
@@ -44,18 +41,29 @@ public class MCOpenMRS extends JavaPlugin {
 			if (sender instanceof Player) {
 				Player player = (Player) sender;
 				if (hasFullGauntlet(player)) {
-					Collection<? extends Player> players = Bukkit.getServer().getOnlinePlayers();
-					int numberOfPlayers = Bukkit.getOnlinePlayers().size();
-					int half = numberOfPlayers / 2;
-					while (half > 0) {
-						int randomIndex = (int)(Math.random() * (double)(numberOfPlayers));
-						Player randomPlayer = Iterables.get(players, randomIndex);
-						this.getServer().broadcastMessage(ChatColor.DARK_PURPLE + randomPlayer.getName() + ChatColor.WHITE +  "has been snapped.");
-						randomPlayer.kickPlayer("You have been snapped.");
-						players.remove(randomPlayer);
-						numberOfPlayers--;
-						half--;
+					for (Player p : Bukkit.getOnlinePlayers()) {
+						p.sendTitle(ChatColor.LIGHT_PURPLE + "You should have gone for the head...", ChatColor.YELLOW + "*snaps*", 10, 100,10);
 					}
+					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
+						public void run() {
+							for (Player p : Bukkit.getOnlinePlayers()) {
+								p.playSound(p.getLocation(), Sound.ITEM_FLINTANDSTEEL_USE, 10F, 1.5F);
+							}
+							List<Player> players = new ArrayList<Player>(Bukkit.getOnlinePlayers());
+							int numberOfPlayers = Bukkit.getOnlinePlayers().size();
+							int half = numberOfPlayers / 2;
+							while (half > 0) {
+								int randomIndex = (int) (Math.random() * (double)(numberOfPlayers - 1));
+								Player randomPlayer = players.get(randomIndex);
+								players.remove(randomIndex);
+								delayedKick(randomPlayer);
+								randomPlayer.spawnParticle(Particle.SMOKE_LARGE, randomPlayer.getLocation(), 20);
+								spawnParticleLoop(randomPlayer);
+								half--;
+								numberOfPlayers--;
+							}
+						}
+					}, (120));
 				}
 			}
 		}
@@ -126,5 +134,24 @@ public class MCOpenMRS extends JavaPlugin {
 		}
 		start += " to snap.";
 		return start;
+	}
+
+	private void delayedKick(Player player) {
+		final Player kickingPlayer = player;
+		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
+			public void run() {
+				Bukkit.getServer().broadcastMessage(ChatColor.DARK_PURPLE + kickingPlayer.getName() + ChatColor.WHITE + " has been snapped.");
+				kickingPlayer.kickPlayer("You have been snapped.");
+				Bukkit.getServer().getScheduler().cancelTask(taskID);
+			}
+		}, (100));
+	}
+
+	private void spawnParticleLoop(Player player) {
+		taskID = Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
+			public void run() {
+				player.spawnParticle(Particle.SMOKE_LARGE, player.getLocation(), 50);
+			}
+		}, 10L, 10L);
 	}
 }

@@ -7,9 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="236a374f-4c26-4862-9af8-ee9be1931654" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/me/peytontanzillo/mcopenmrs/MCOpenMRS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MCOpenMRS_jar/MCOpenMRS.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MCOpenMRS_jar/MCOpenMRS.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MCOpenMRS/me/peytontanzillo/mcopenmrs/MCOpenMRS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MCOpenMRS/me/peytontanzillo/mcopenmrs/MCOpenMRS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/me/peytontanzillo/mcopenmrs/MCOpenMRS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/me/peytontanzillo/mcopenmrs/MCOpenMRS.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,10 +27,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/me/peytontanzillo/mcopenmrs/MCOpenMRS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="57" column="21" lean-forward="true" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
+            <state relative-caret-position="337">
+              <caret line="49" column="99" selection-start-line="49" selection-start-column="99" selection-end-line="49" selection-end-column="99" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#5581#5582#0" expanded="true" />
+                <element signature="e#5660#5661#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -73,10 +76,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="16" />
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
-    <option name="width" value="1363" />
+    <option name="width" value="1379" />
     <option name="height" value="794" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -112,6 +114,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -142,10 +145,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="16" y="23" width="1363" height="794" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="794" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2611658" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2539342" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -174,12 +177,21 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
+    <entry file="jar://$PROJECT_DIR$/../../buildtools/server.jar!/org/bukkit/plugin/java/JavaPlugin.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3680">
+          <caret line="238" column="16" selection-start-line="238" selection-start-column="16" selection-end-line="238" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/me/peytontanzillo/mcopenmrs/MCOpenMRS.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="57" column="21" lean-forward="true" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
+        <state relative-caret-position="337">
+          <caret line="49" column="99" selection-start-line="49" selection-start-column="99" selection-end-line="49" selection-end-column="99" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#5581#5582#0" expanded="true" />
+            <element signature="e#5660#5661#0" expanded="true" />
           </folding>
         </state>
       </provider>
